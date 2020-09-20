@@ -1,0 +1,31 @@
+#lang racket
+;;Assignment 1 SYSC 3101
+;;Author: Mounica Pillarisetty
+
+;;Exercise 6
+
+(a) Recursive Process
+
+(add-ab 3 4)
+==> (increment (add-ab (decrement 3) 4))
+==> (increment (add-ab 2 4))
+==> (increment (increment (add-ab (decrement 2) 4)))
+==> (increment (increment (add-ab 1 4)))
+==> (increment (increment (increment (add-ab (decrement 1) 4))))
+==> (increment (increment (increment (add-ab 0 4))))
+==> (increment (increment (increment 4)))
+==> (increment (increment 5))
+==> (increment 6)
+==> 7
+
+(b) Iterative Process
+
+(sum-ab 3 4)
+==> (sum-ab (decrement 3) (increment 4))
+==> (sum-ab 2 5)
+==> (sum-ab (decrement 2) (increment 5))
+==> (sum-ab 1 6)
+==> (sum-ab (decrement 1) (increment 6))
+==> (sum-ab 0 7)
+==> 7
+

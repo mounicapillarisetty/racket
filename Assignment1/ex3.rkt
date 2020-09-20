@@ -1,0 +1,13 @@
+#lang racket
+;;Assignment 1 SYSC 3101
+;;Author: Mounica Pillarisetty
+
+;;Exercise 3
+
+;;Computes the sum of the odd digits of a positive integer
+(define (sum-odd-digits x)
+  (if(< x 10)
+     (if(= (remainder x 2) 1) x 0)
+     (if(= (remainder (remainder x 10) 2) 1)
+        (+ (remainder x 10) (sum-odd-digits (quotient x 10)))
+        (sum-odd-digits(quotient x 10)))))
